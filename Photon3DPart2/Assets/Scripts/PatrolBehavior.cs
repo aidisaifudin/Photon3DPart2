@@ -9,6 +9,9 @@ public class PatrolBehavior : StateMachineBehaviour
     List<Transform> wayPoints = new List<Transform>();
     NavMeshAgent agent;
 
+    Transform player;
+    float chaseRange = 15;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -19,6 +22,8 @@ public class PatrolBehavior : StateMachineBehaviour
 
         agent = animator.GetComponent<NavMeshAgent>(); //get navmesh agent component
         agent.SetDestination(wayPoints[0].position);
+
+        player = GameObject.FindGameObjectWithTag("Player").transform; // find player transform
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,6 +35,12 @@ public class PatrolBehavior : StateMachineBehaviour
         timer += Time.deltaTime;
         if (timer > 10)
             animator.SetBool("isPatrolling", false);
+
+        float distance = Vector3.Distance(animator.transform.position, player.position);
+
+        if (distance < chaseRange)
+            animator.SetBool("isChasing", true); // chasing animation starts
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
