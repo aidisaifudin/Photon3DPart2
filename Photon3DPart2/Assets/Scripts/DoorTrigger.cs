@@ -4,33 +4,48 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    public Animator myDoor = null;
-    public bool openTrigger = false;
-    public bool closeTrigger = false;
+    public bool action;
+    
+    //public bool openTrigger = false;
+    //public bool closeTrigger = false;
 
-    public string doorOpen = "DoorOpen";
-    public string doorClose = "DoorClose";
-
+    //public string doorOpen = "DoorOpen";
+    //public string doorClose = "DoorClose";
+    public GameObject door;
     public GameObject openPanel;
 
+    private void Start()
+    {
+        openPanel.gameObject.SetActive(false);
+    }
 
-
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            if(openTrigger)
-            {
-                myDoor.Play(doorOpen, 0, 0.0f);
-            }
-
-            else if (closeTrigger)
-            {
-                myDoor.Play(doorClose, 0, 0.0f); 
-            }
+            openPanel.gameObject.SetActive(true);
+            action = true;
         }
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        openPanel.gameObject.SetActive(false);
+        action = false;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(action == true)
+            {
+                openPanel.gameObject.SetActive(false);
+                door.GetComponent<Animator>().Play("DoorOpen");
+                action = false;
+            }
+        }
+    }
 
 }
 

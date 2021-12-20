@@ -956,11 +956,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d2ee3da9f18cb4586d2a02316ab3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myDoor: {fileID: 1532035308}
-  openTrigger: 1
-  closeTrigger: 0
-  doorOpen: DoorOpen
-  doorClose: DoorClose
+  action: 0
+  door: {fileID: 1532035303}
   openPanel: {fileID: 58404866}
 --- !u!65 &1377471839
 BoxCollider:
