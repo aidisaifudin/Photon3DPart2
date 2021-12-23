@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 89f08ca8-365b-4ab6-abbf-3ffd5db4111a
     AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: b35c6aec-8d0e-4f57-9960-9a42dccf3665
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -51,6 +51,9 @@ MonoBehaviour:
   - YouGotKilledBy
   - YouKilled
   - TakeDamage
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
