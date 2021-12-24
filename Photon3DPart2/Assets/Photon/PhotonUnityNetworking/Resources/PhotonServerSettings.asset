@@ -15,7 +15,7 @@ MonoBehaviour:
   AppSettings:
     AppIdRealtime: 89f08ca8-365b-4ab6-abbf-3ffd5db4111a
     AppIdFusion: 
-    AppIdChat: ea0105dc-e065-43d8-b454-18dba943e233
+    AppIdChat: e45e30ed-e556-462a-b7ab-4ecad3e60177
     AppIdVoice: b35c6aec-8d0e-4f57-9960-9a42dccf3665
     AppVersion: 
     UseNameServer: 1
@@ -55,6 +55,7 @@ MonoBehaviour:
   - ChangeColour
   - HeresWhy
   - RPC_AddMessage
+  - RPC_AddNewMessage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

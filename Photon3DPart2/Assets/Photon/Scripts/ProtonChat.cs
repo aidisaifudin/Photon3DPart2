@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Chat;
 using Photon.Pun;
 using TMPro;
 using System.Text.RegularExpressions;
@@ -9,50 +8,50 @@ using System.Text.RegularExpressions;
 public class ProtonChat : MonoBehaviour
 {
     public TMP_InputField ChatInput;
-    public TextMeshPro ChatContent;
-    private PhotonView photon;
-    private List<string> messages = new List<string>();
-    private float buildDelay = 0f;
-    private int maximumMessages = 14;
+    public TextMeshProUGUI ChatContent;
+    private PhotonView _photon;
+    private List<string> _messages = new List<string>();
+    private float _buildDelay = 0f;
+    private int _maximumMessages = 14;
   
     // Start is called before the first frame update
     void Start()
     {
-        photon = GetComponent<PhotonView>();
+        _photon = GetComponent<PhotonView>();
     }
 
-    [PunRPC]
-    void RPC_AddMessage(string msg)
+    
+     protected virtual void RPC_AddNewMessage(string msg)
     {
-        messages.Add(msg);
+        _messages.Add(msg);
     }
     // Update is called once per frame
     void Update()
     {
         if (PhotonNetwork.InRoom)
         {
-            ChatContent.maxVisibleLines = maximumMessages;
+            ChatContent.maxVisibleLines = _maximumMessages;
 
-            if (messages.Count > maximumMessages)
+            if (_messages.Count > _maximumMessages)
             {
-                messages.RemoveAt(0);
+                _messages.RemoveAt(0);
             }
-            if (buildDelay < Time.time)
+            if (_buildDelay < Time.time)
             {
                 BuildChatContent();
-                buildDelay = Time.time + 0.25f;
+                _buildDelay = Time.time + 0.25f;
             }
 
-        }else if(messages.Count>0)
+        }else if(_messages.Count>0)
         {
-            messages.Clear();
+            _messages.Clear();
             ChatContent.text = "";
         }
     }
     public void SendChat(string msg)
     {
         string NewMessages = PhotonNetwork.NickName + ": " + msg;
-        photon.RPC("RPC_AddNewMessages", RpcTarget.All, NewMessages);
+        _photon.RPC("RPC_AddNewMessages", RpcTarget.All, NewMessages);
 
     }
     public void SubmitChat()
@@ -72,7 +71,7 @@ public class ProtonChat : MonoBehaviour
     void BuildChatContent()
     {
         string NewContents = "";
-        foreach(string s in messages)
+        foreach(string s in _messages)
         {
             NewContents += s + "\n";
         }
