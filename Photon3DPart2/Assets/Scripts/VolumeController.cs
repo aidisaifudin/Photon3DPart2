@@ -6,33 +6,32 @@ using TMPro;
 
 public class VolumeController : MonoBehaviour
 {
-    public Slider volumeSlider = null;
+    public Slider musicSlider;
+    
+    public AudioSource music;
     public TextMeshProUGUI volumeTextUI = null;
 
     public void Start()
     {
-        LoadValues();
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume"); //get music playerpref
+        
     }
 
+    public void Update()
+    {
+        music.volume = musicSlider.value;
+    }
 
     public void VolumeSlider(float volume)
     {
         volumeTextUI.text = volume.ToString("0.0");
     }
 
-
-    public void SaveVolumeButton()
+    public void VolumePrefs()
     {
-        float volumeValue = volumeSlider.value;
-        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
-        LoadValues();
+        PlayerPrefs.SetFloat("MusicVolume", music.volume);
     }
 
-    public void LoadValues()
-    {
-        float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
-        volumeSlider.value = volumeValue;
-        AudioListener.volume = volumeValue;
-    }
-   
+
+    
 }
