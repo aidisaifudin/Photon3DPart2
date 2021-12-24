@@ -34,9 +34,9 @@ public class PixelGunGameManager : MonoBehaviourPunCallbacks
         {
             if (playerPrefab!=null)
             {
-                int randomPoint = Random.Range(-20, 20);
+                //int randomPoint = Random.Range(0, 20);
 
-                PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(randomPoint, 0, randomPoint), Quaternion.identity);
+                PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(72, 0, 10), Quaternion.identity);
             }
         }       
     }
