@@ -8,6 +8,7 @@ TagManager:
   - Door
   - WhatIsGround
   - WhatIsPlayer
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 786c0baf5eb32fe488aad02bbd5c3cf6
+  - enabled: 1
     path: Assets/Scenes/GameLauncherScene.unity
     guid: 3d11b15862acaf040b4693e99bc67115
   - enabled: 1
@@ -17,4 +20,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ProximityVoiceChat.unity
     guid: 9f1cd40f49900e341843571f937a9c61
+  - enabled: 1
+    path: Assets/Scenes/Instruction.unity
+    guid: becb426b6a3be8743bf747fff78f17e1
+  - enabled: 1
+    path: Assets/Scenes/Defeat.unity
+    guid: afcc26a13bbf07a45be77fc6a614237c
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: 8f2e5dee841838f47b99c17574e3d46a
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: ab35cadf24cba3e4f97270e1bf4dcf38
   m_configObjects: {}
