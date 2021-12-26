@@ -2607,6 +2607,7 @@ GameObject:
   - component: {fileID: 7460126115097210066}
   - component: {fileID: 1007120570583497579}
   - component: {fileID: 1007120570583497556}
+  - component: {fileID: 8692959312049541019}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2706,6 +2707,20 @@ MonoBehaviour:
   attackRange: 12
   playerInSightRange: 0
   playerInAttackRange: 0
+--- !u!114 &8692959312049541019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460126116275359607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49ac25386985ee46847fda3287946d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deadbody: {fileID: 7460126116275359607}
 --- !u!1 &7460126116275359609
 GameObject:
   m_ObjectHideFlags: 0

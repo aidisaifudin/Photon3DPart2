@@ -9422,7 +9422,7 @@ GameObject:
   - component: {fileID: 504012600}
   - component: {fileID: 504012599}
   m_Layer: 5
-  m_Name: Play (2)
+  m_Name: Credit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9491,7 +9491,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 504012600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915661819}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Credit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &504012600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15698,6 +15710,7 @@ GameObject:
   - component: {fileID: 915661817}
   - component: {fileID: 915661816}
   - component: {fileID: 915661815}
+  - component: {fileID: 915661819}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -15789,6 +15802,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &915661819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915661814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b85f98214367841a931afc6e18fd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921047308
 GameObject:
   m_ObjectHideFlags: 0
@@ -29977,7 +30002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1626465252}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915661819}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1626465252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30321,7 +30358,7 @@ GameObject:
   - component: {fileID: 1655201326}
   - component: {fileID: 1655201325}
   m_Layer: 5
-  m_Name: Play (1)
+  m_Name: Instruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30390,7 +30427,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1655201326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915661819}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Instruction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1655201326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34245,7 +34294,7 @@ GameObject:
   - component: {fileID: 1843130829}
   - component: {fileID: 1843130828}
   m_Layer: 5
-  m_Name: Play (3)
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34314,7 +34363,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1843130829}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915661819}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1843130829
 MonoBehaviour:
   m_ObjectHideFlags: 0

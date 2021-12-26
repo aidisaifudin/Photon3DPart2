@@ -902,10 +902,10 @@ GameObject:
   - component: {fileID: 2281271362652054467}
   - component: {fileID: 39294671}
   - component: {fileID: 1174455946289767610}
-  - component: {fileID: 372727957823264365}
   - component: {fileID: 7641020860084376689}
   - component: {fileID: 2471985745919389068}
   - component: {fileID: 6411313848316748773}
+  - component: {fileID: 3351788467042807488}
   m_Layer: 0
   m_Name: A
   m_TagString: Player
@@ -999,20 +999,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
---- !u!114 &372727957823264365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472187712872915363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f48ecbcf1721f409e66e7c5bf5f45e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsCamera: {fileID: 1170292295}
-  fireRate: 0.1
 --- !u!114 &7641020860084376689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1043,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3065632888165851567}
   startHealth: 100
+--- !u!114 &3351788467042807488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472187712872915363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43543a197e5a645459bfbec0caa5e409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 4341961505189557138, guid: ec735a9742b80fa45bd80f51d046600b, type: 3}
+  Force: 2000
 --- !u!1 &8472187713101906323
 GameObject:
   m_ObjectHideFlags: 0
