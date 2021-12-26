@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject projectile;
 
+    public GameObject enemy;
+
     public float health;
 
     //Patroling
@@ -47,10 +49,13 @@ public class EnemyAI : MonoBehaviour
 
     private void Patroling()
     {
+        
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
             agent.SetDestination(walkPoint);
+            enemy.GetComponent<Animator>().Play("Patrol");
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -75,12 +80,14 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        enemy.GetComponent<Animator>().Play("Chase");
     }
 
     private void AttackPlayer()
     {
         //make sure enemy does not move
         agent.SetDestination(transform.position);
+        enemy.GetComponent<Animator>().Play("Shoot");
 
         transform.LookAt(player); // look at player when shoot
 

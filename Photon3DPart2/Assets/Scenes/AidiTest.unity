@@ -562,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6799104069041520056, guid: 28586efbf12de174e9a82ed5bd8dd854, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 242.87001
+      value: 242.87
       objectReference: {fileID: 0}
     - target: {fileID: 6799104069041520056, guid: 28586efbf12de174e9a82ed5bd8dd854, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1590,6 +1590,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   projectile: {fileID: 108213180}
+  enemy: {fileID: 0}
   health: 120
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
@@ -1792,6 +1793,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   projectile: {fileID: 108213180}
+  enemy: {fileID: 1867501789}
   health: 120
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
@@ -1807,6 +1809,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7673487250857332701, guid: c98043d57e0190845b790d7b92990bee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8b169493585a25c458bed234a0283847, type: 2}
     - target: {fileID: 7673487251499248760, guid: c98043d57e0190845b790d7b92990bee, type: 3}
       propertyPath: m_Name
       value: HPCharacter
