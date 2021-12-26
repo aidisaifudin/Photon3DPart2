@@ -21,10 +21,11 @@ public class OnImpact : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];
-       // Instantiate(impactEffect, contact.point, Quaternion.LookRotation(contact.normal));
+        //Instantiate(impactEffect, contact.point, Quaternion.LookRotation(contact.normal));
 
         if (collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("Hit");
             EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
             target.ApplyDamage(damage);
         }
