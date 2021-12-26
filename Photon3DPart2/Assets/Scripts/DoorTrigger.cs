@@ -13,6 +13,7 @@ public class DoorTrigger : MonoBehaviour
     //public string doorClose = "DoorClose";
     public GameObject door;
     public GameObject openPanel;
+    public GameObject triggerCube;
 
     private void Start()
     {
@@ -43,6 +44,8 @@ public class DoorTrigger : MonoBehaviour
                 openPanel.gameObject.SetActive(false);
                 door.GetComponent<Animator>().Play("DoorOpen");
                 action = false;
+                triggerCube.gameObject.SetActive(false);
+
             }
         }
     }

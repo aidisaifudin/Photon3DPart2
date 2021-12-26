@@ -1166,6 +1166,7 @@ MonoBehaviour:
   action: 0
   door: {fileID: 1532035303}
   openPanel: {fileID: 58404866}
+  triggerCube: {fileID: 1377471837}
 --- !u!65 &1377471839
 BoxCollider:
   m_ObjectHideFlags: 0
