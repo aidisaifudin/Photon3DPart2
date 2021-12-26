@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1170292293}
   - component: {fileID: 1170292295}
   - component: {fileID: 1170292294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850007784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponHlder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6784765938467954021}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 383551626724718334}
   - component: {fileID: 4862672182245847182}
   - component: {fileID: 116063732439635282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4169698780030412299}
   - component: {fileID: 7064099426154261031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 7430812243492971661}
   - component: {fileID: 9196640222460238971}
   - component: {fileID: 7577811165970119551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 917514902545093226}
   - component: {fileID: 8893672856024214348}
   - component: {fileID: 5937633150102072640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 3831022573352369692}
   - component: {fileID: 2616722981827579867}
   - component: {fileID: 9084127495104284499}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 2215650215436499530}
   - component: {fileID: 4494852337135254909}
   - component: {fileID: 3065632888165851567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 8472187711479263937}
   - component: {fileID: 8472187711479263964}
   - component: {fileID: 8472187711479263967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +748,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8472187711876321331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 8472187711934093638}
   - component: {fileID: 8472187711934093637}
   - component: {fileID: 8472187711934093636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 8472187711994693540}
   - component: {fileID: 8472187711994693539}
   - component: {fileID: 8472187711994693538}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 7641020860084376689}
   - component: {fileID: 2471985745919389068}
   - component: {fileID: 6411313848316748773}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1097,7 +1097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8472187713101906320}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 6218740651529632418}
   - component: {fileID: 1156244505780497857}
   - component: {fileID: 4734206194166844896}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Voice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1420,6 +1420,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 52ac24898fa82a546a25e33b9cb45036, type: 3}
       propertyPath: m_Name
       value: M4_Carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 52ac24898fa82a546a25e33b9cb45036, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52ac24898fa82a546a25e33b9cb45036, type: 3}
