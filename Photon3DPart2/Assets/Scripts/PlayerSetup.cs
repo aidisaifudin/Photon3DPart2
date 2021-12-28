@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerSetup : MonoBehaviourPunCallbacks
 {
@@ -13,6 +14,8 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
     [SerializeField]
     TextMeshProUGUI playerNameText;
 
+    public float damage;
+    public float health;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,25 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
             playerNameText.text = photonView.Owner.NickName;
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
 
-    
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            Debug.Log("I got hit");
+            ApplyDamage();
+
+        }
+    }
+    public void ApplyDamage()
+    {
+        health -= Mathf.Abs(damage);
+        if (health < 0)
+        {
+            SceneManager.LoadScene("Defeat");
+            
+        }
+    }
+ 
+
 }

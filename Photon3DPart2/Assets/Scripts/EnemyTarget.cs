@@ -22,7 +22,7 @@ public class EnemyTarget : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Bullet")
         {
             Debug.Log("Hit");
             EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
