@@ -1058,6 +1058,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 1170292292}
   playerNameText: {fileID: 5937633150102072640}
+  damage: 0
+  health: 0
 --- !u!114 &2471985745919389068
 MonoBehaviour:
   m_ObjectHideFlags: 0
