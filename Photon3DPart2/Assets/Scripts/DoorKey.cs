@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+
+[RequireComponent(typeof(PhotonView))]
+[RequireComponent(typeof(PhotonAnimatorView))]
 
 public class DoorKey : MonoBehaviour
 {
+    PhotonView pV;
     public bool inTrigger;
 
     void OnTriggerEnter(Collider other)
