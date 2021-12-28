@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform; //find player
+        player = GameObject.FindGameObjectWithTag("Player").transform; //find player
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
@@ -98,9 +98,12 @@ public class EnemyAI : MonoBehaviour
 
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+
+            
         }
 
     }
