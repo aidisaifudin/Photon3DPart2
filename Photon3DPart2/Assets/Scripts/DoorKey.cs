@@ -20,7 +20,7 @@ public class DoorKey : MonoBehaviour
     {
         inTrigger = false;
     }
-
+    [PunRPC]
     void Update()
     {
         if (inTrigger)
@@ -30,6 +30,8 @@ public class DoorKey : MonoBehaviour
                 DoorScripts.doorKey = true;
                 Destroy(this.gameObject);
             }
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("Update", RpcTarget.All);
         }
     }
 
