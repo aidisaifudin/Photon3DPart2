@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -88,7 +89,8 @@ public class EnemyAI : MonoBehaviour
         //make sure enemy does not move
         agent.SetDestination(transform.position);
         enemy.GetComponent<Animator>().Play("Shoot");
-
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("Shoot", RpcTarget.All);
         transform.LookAt(player); // look at player when shoot
 
         if(!alreadyAttacked)

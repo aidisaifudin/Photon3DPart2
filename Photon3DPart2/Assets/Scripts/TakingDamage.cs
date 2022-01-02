@@ -32,6 +32,7 @@ public class TakingDamage : MonoBehaviourPunCallbacks
     [PunRPC]
     public void TakeDamage(float _damage)
     {
+        
         health -= _damage;
         Debug.Log(health);
 
@@ -42,7 +43,8 @@ public class TakingDamage : MonoBehaviourPunCallbacks
             //Die
             Die();
         }
-
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("TakeDamage", RpcTarget.All);
 
     }
 
@@ -51,6 +53,8 @@ public class TakingDamage : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("Die", RpcTarget.All);
             PixelGunGameManager.instance.LeaveRoom();
         }
       

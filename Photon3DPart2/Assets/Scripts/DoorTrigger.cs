@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class DoorTrigger : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class DoorTrigger : MonoBehaviour
         {
             if(action == true)
             {
+                PhotonView photonView = PhotonView.Get(this);
+                photonView.RPC("DoorOpen", RpcTarget.All);
                 openPanel.gameObject.SetActive(false);
                 door.GetComponent<Animator>().Play("DoorOpen");
                 action = false;
