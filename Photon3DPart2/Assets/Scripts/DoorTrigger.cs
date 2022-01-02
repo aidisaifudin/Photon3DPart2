@@ -20,7 +20,7 @@ public class DoorTrigger : MonoBehaviour
     {
         openPanel.gameObject.SetActive(false);
     }
-
+    [PunRPC]
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -29,7 +29,7 @@ public class DoorTrigger : MonoBehaviour
             action = true;
         }
     }
-
+    [PunRPC]
     void OnTriggerExit(Collider other)
     {
         openPanel.gameObject.SetActive(false);

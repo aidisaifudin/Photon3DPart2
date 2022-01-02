@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class EnemyTarget : MonoBehaviour
 {
     public float health = 100f;
@@ -28,7 +28,9 @@ public class EnemyTarget : MonoBehaviour
             EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
             target.ApplyDamage(damage);
         }
+      
     }
+    [PunRPC]
 public void ApplyDamage(float amount)
     {
         health -= Mathf.Abs(amount);
@@ -37,6 +39,8 @@ public void ApplyDamage(float amount)
 
             Destroy(gameObject);
         }
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("ApplyDamage", RpcTarget.All);
     }
     void Die()
     {
