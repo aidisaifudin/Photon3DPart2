@@ -2675,7 +2675,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1007120570583497556
@@ -2691,7 +2691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1007120570583497579}
-  player: {fileID: 0}
+  player: {fileID: 8472187712872915360, guid: 0f3aaecc92d64dc4283774560f0dfe53, type: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
