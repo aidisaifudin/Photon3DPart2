@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599015266615767568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 6885195758512889356}
   - component: {fileID: 2682719420987674725}
   - component: {fileID: 4855683223760865145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AI
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -171,6 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 9062193391289519556}
   playerNameText: {fileID: 3433384505944022720}
+  damage: 0
+  health: 0
 --- !u!114 &6885195758512889356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +310,7 @@ GameObject:
   - component: {fileID: 599015267598052038}
   - component: {fileID: 599015267598052037}
   - component: {fileID: 599015267598052036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +391,7 @@ GameObject:
   - component: {fileID: 599015267655939108}
   - component: {fileID: 599015267655939107}
   - component: {fileID: 599015267655939106}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599015268074922931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +505,7 @@ GameObject:
   - component: {fileID: 599015268220649793}
   - component: {fileID: 599015268220649820}
   - component: {fileID: 599015268220649823}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +589,7 @@ GameObject:
   - component: {fileID: 4098528385107420479}
   - component: {fileID: 4098528385107420476}
   - component: {fileID: 4098528385107420477}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Voice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +828,7 @@ GameObject:
   - component: {fileID: 7168871620661561802}
   - component: {fileID: 4873893714817355517}
   - component: {fileID: 6289329926740120111}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +903,7 @@ GameObject:
   - component: {fileID: 1935682240490034957}
   - component: {fileID: 171813457983352827}
   - component: {fileID: 1507206120686897407}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +980,7 @@ GameObject:
   - component: {fileID: 5253983722769665436}
   - component: {fileID: 6454528325180882011}
   - component: {fileID: 275332227653022931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1081,7 @@ GameObject:
   - component: {fileID: 8176507298427347434}
   - component: {fileID: 481828775591286988}
   - component: {fileID: 3433384505944022720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1215,7 @@ GameObject:
   - component: {fileID: 8687943737521096062}
   - component: {fileID: 4519589233905271566}
   - component: {fileID: 8961943055345886930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,7 +1294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7403360123402069604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2588219912127786725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,7 +1362,7 @@ GameObject:
   - component: {fileID: 5560421586500088979}
   - component: {fileID: 3490733123334786725}
   - component: {fileID: 7155404161973269084}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M4_Carbine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,7 +1441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9062193390895076200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponHlder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1474,7 @@ GameObject:
   - component: {fileID: 9062193391289519557}
   - component: {fileID: 9062193391289519559}
   - component: {fileID: 9062193391289519558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
