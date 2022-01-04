@@ -11,6 +11,7 @@ public class TakingDamage : MonoBehaviourPunCallbacks
 
     private float health;
     public float startHealth = 100;
+    
 
     // Start is called before the first frame update
     void Start()
