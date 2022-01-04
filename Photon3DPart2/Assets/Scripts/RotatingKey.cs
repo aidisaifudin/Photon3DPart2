@@ -38,14 +38,13 @@ public class RotatingKey : MonoBehaviour
     public void PickUp()
     {
         Destroy(gameObject);
-        PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("PickUp", RpcTarget.All);
+   
         Debug.Log("Key Gone");
     }
     public void UpdatedPickUp()
     {
         PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("PickUp", RpcTarget.All);
+        photonView.RPC("PickUp", RpcTarget.AllBuffered);
 
     }
 }
