@@ -23,6 +23,16 @@ public class FireObject : MonoBehaviourPun
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            pV.RPC("Shoot", RpcTarget.AllBuffered);
+        }
+
+        }
+   
+
+    [PunRPC]
+    public void Shoot()
+    {
+      
             GameObject BulletHolder;
             BulletHolder = Instantiate(Bullet, transform.position, transform.rotation) as GameObject;
 
@@ -33,12 +43,6 @@ public class FireObject : MonoBehaviourPun
             Temporary_RigidBody.AddForce(transform.forward * Force);
 
             Destroy(BulletHolder, 5.0f);
-        }
-    }
-
-    [PunRPC]
-    public void Shoot()
-    {
-
+        
     }
 }
