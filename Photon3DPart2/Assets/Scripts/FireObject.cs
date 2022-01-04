@@ -12,7 +12,10 @@ public class FireObject : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        pV = GetComponent<PhotonView>();
+        if(!pV.IsMine)
+        {
+            this.GetComponent<FireObject>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -31,5 +34,11 @@ public class FireObject : MonoBehaviourPun
 
             Destroy(BulletHolder, 5.0f);
         }
+    }
+
+    [PunRPC]
+    public void Shoot()
+    {
+
     }
 }
