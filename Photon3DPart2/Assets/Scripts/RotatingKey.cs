@@ -40,7 +40,7 @@ public class RotatingKey : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("Key Gone");
     }
-    private void UpdatePickUp()
+    public void UpdatedPickUp()
     {
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("PickUp", RpcTarget.All);
