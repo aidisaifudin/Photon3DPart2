@@ -18,6 +18,7 @@ public class DoorTrigger : MonoBehaviour
 
     private void Start()
     {
+        PhotonView photonView = PhotonView.Get(this);
         openPanel.gameObject.SetActive(false);
     }
     [PunRPC]
@@ -29,21 +30,21 @@ public class DoorTrigger : MonoBehaviour
             action = true;
         }
     }
-    [PunRPC]
+    
     void OnTriggerExit(Collider other)
     {
         openPanel.gameObject.SetActive(false);
         action = false;
     }
-
+    [PunRPC]
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
             if(action == true)
             {
-                PhotonView photonView = PhotonView.Get(this);
-                photonView.RPC("DoorOpen", RpcTarget.All);
+                
+          
                 openPanel.gameObject.SetActive(false);
                 door.GetComponent<Animator>().Play("DoorOpen");
                 action = false;
@@ -51,6 +52,11 @@ public class DoorTrigger : MonoBehaviour
 
             }
         }
+    }
+   public void UpdatedKeyDestroy()
+    {
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("Update", RpcTarget.All);
     }
 
 }

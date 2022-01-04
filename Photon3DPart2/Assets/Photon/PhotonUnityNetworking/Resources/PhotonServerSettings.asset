@@ -60,6 +60,7 @@ MonoBehaviour:
   - OnTriggerExit
   - ApplyDamage
   - Update
+  - TakeKey
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

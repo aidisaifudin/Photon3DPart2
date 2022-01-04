@@ -20,6 +20,8 @@ public class TakingDamage : MonoBehaviourPunCallbacks
         health = startHealth;
 
         healthBar.fillAmount = health/startHealth;
+        PhotonView photonView = PhotonView.Get(this);
+       
     }
 
     // Update is called once per frame
@@ -43,8 +45,7 @@ public class TakingDamage : MonoBehaviourPunCallbacks
             //Die
             Die();
         }
-        PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("TakeDamage", RpcTarget.All);
+      
 
     }
 

@@ -33,17 +33,16 @@ public class DoorKey : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
-            GUI.Box(new Rect(0, 60, 200, 25), "Press E to take key");
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                DoorScripts.doorKey = true;
-                
-            }
+            Debug.Log("Hi");
+          
+            TakeKey();
+          
         }
     }
     [PunRPC]
     public void TakeKey()
     {
+        Debug.Log("Take Key");
         DoorScripts.doorKey = true;
         Destroy(this.gameObject);
         Destroy(this.gameObject); PhotonView photonView = PhotonView.Get(this);
@@ -52,9 +51,6 @@ public class DoorKey : MonoBehaviour
 
     void OnGUI()
     {
-        if (inTrigger)
-        {
-            GUI.Box(new Rect(0, 60, 200, 25), "Press E to take key");
-        }
+   
     }
 }

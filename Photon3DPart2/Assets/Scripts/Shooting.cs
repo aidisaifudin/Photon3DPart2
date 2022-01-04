@@ -14,10 +14,11 @@ public class Shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PhotonView photonView = PhotonView.Get(this);
     }
 
     // Update is called once per frame
+    [PunRPC]
     void Update()
     {
 
@@ -55,5 +56,10 @@ public class Shooting : MonoBehaviour
         }
 
 
+    }
+    public void UpdateShooting()
+    {
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("Update", RpcTarget.All);
     }
 }
