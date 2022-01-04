@@ -8,12 +8,12 @@ public class RotatingKey : MonoBehaviourPun
 {
     public int rotatingSpeed;
     private bool pickUpAllowed;
-    PhotonView pV;
+     public PhotonView pV;
 
     // Update is called once per frame
     public void Start()
     {
-        
+        pV = GetComponent<PhotonView>();
     }
     void Update()
     {
