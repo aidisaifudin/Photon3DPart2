@@ -36,6 +36,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform; //find player
         agent = GetComponent<NavMeshAgent>();
     }
+
     private void Update()
     {
         //check for sight or attack range
