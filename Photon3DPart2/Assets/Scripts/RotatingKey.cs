@@ -13,7 +13,7 @@ public class RotatingKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, rotatingSpeed, 0, Space.World);
+        //transform.Rotate(0, rotatingSpeed, 0, Space.World);
         if(pickUpAllowed && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
