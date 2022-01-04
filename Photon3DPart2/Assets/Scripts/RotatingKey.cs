@@ -4,28 +4,27 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class RotatingKey : MonoBehaviour
+public class RotatingKey : MonoBehaviourPun
 {
     public int rotatingSpeed;
     private bool pickUpAllowed;
-    private PhotonView pV;
+    PhotonView pV;
 
     // Update is called once per frame
     public void Start()
     {
-        PhotonView photonView = PhotonView.Get(this);
+        
     }
     void Update()
     {
         //transform.Rotate(0, rotatingSpeed, 0, Space.World);
-        if (pV.IsMine)
-        {
+       
             if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
             {
-               // PickUp();
-                pV.RPC("PickUp", RpcTarget.AllBuffered);
-            }
+                //PickUp();
+            pV.RPC("PickUp", RpcTarget.AllBuffered, null);
         }
+        
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -50,5 +49,9 @@ public class RotatingKey : MonoBehaviour
    
         Debug.Log("Key Gone");
     }
-
+    public void UpdatedPickUp()
+    {
+        PhotonView photonView = PhotonView.Get(this);
+        pV.RPC("PickUp", RpcTarget.AllBuffered, null);
+    }
 }
