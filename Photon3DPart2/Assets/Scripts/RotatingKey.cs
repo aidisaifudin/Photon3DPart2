@@ -21,8 +21,8 @@ public class RotatingKey : MonoBehaviourPun
        
             if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
             {
-                //PickUp();
-            pV.RPC("PickUp", RpcTarget.AllBuffered, null);
+            //PickUp();
+            pV.RPC("PickUp", RpcTarget.AllBuffered);
         }
         
     }
@@ -51,7 +51,7 @@ public class RotatingKey : MonoBehaviourPun
     }
     public void UpdatedPickUp()
     {
-        PhotonView photonView = PhotonView.Get(this);
-        pV.RPC("PickUp", RpcTarget.AllBuffered, null);
+       // PhotonView photonView = PhotonView.Get(this);
+       // pV.RPC("PickUp", RpcTarget.AllBuffered, null);
     }
 }
