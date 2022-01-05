@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; //find player
+        //player = GameObject.FindGameObjectWithTag("Player").transform; //find player
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -90,17 +90,18 @@ public class EnemyAI : MonoBehaviour
         //make sure enemy does not move
         agent.SetDestination(transform.position);
         enemy.GetComponent<Animator>().Play("Shoot");
-        PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("Shoot", RpcTarget.All);
+        //PhotonView photonView = PhotonView.Get(this);
+        //photonView.RPC("Shoot", RpcTarget.All);
         transform.LookAt(player); // look at player when shoot
 
         if(!alreadyAttacked)
         {
+           // projectile.transform.position = new Vector3(1f, 1f, 0);
             //attack code
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(projectile,transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 5f, ForceMode.Impulse);
             
 
             alreadyAttacked = true;
