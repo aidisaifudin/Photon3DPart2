@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class OnImpact : MonoBehaviour
+public class OnImpact : MonoBehaviourPun
 {
+    public PhotonView pv;
    // public GameObject impactEffect;
 
     public float damage = 25f;
@@ -18,6 +21,8 @@ public class OnImpact : MonoBehaviour
     {
         
     }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];
