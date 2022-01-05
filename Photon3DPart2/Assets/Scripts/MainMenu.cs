@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviourPun
 {
 
     // Start is called before the first frame update
@@ -31,6 +33,9 @@ public class MainMenu : MonoBehaviour
     }
     public void Exit()
     {
+        
+        
+
         Application.Quit();
     }
     public void Main()
