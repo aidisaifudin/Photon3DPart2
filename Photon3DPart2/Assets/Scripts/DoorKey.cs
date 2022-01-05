@@ -6,7 +6,7 @@ using Photon.Pun;
 [RequireComponent(typeof(PhotonView))]
 [RequireComponent(typeof(PhotonAnimatorView))]
 
-public class DoorKey : MonoBehaviour
+public class DoorKey : MonoBehaviourPun
 {
     PhotonView pV;
     public bool inTrigger;
