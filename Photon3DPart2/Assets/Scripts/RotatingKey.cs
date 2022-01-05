@@ -22,7 +22,7 @@ public class RotatingKey : MonoBehaviourPun
             if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
             {
             PickUp();
-            //pV.RPC("PickUp", RpcTarget.AllBuffered);
+            pV.RPC("PickUp", RpcTarget.All);
         }
         
     }
