@@ -30,9 +30,9 @@ public class OnImpact : MonoBehaviourPun
 
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Hit");
-            EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
-            target.ApplyDamage(damage);
+            
+           // EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
+            //target.ApplyDamage(damage);
         }
         Destroy(gameObject);
     }

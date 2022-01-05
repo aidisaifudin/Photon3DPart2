@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-public class EnemyTarget : MonoBehaviour
+using Photon.Realtime;
+public class EnemyTarget : MonoBehaviourPun
 {
     public float health = 100f;
     public GameObject deadbody;
     private bool created = false;
     public float damage = 25f;
+    public PhotonView pv;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,26 +26,27 @@ public class EnemyTarget : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet")
         {
+            ApplyDamage();
             Debug.Log("Hit");
-            EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
-            target.ApplyDamage(damage);
+           
+
+            //pv.RPC("Die", RpcTarget.All);
+
         }
       
     }
-    [PunRPC]
-public void ApplyDamage(float amount)
-    {
-        health -= Mathf.Abs(amount);
-        if (health < 0 )
-        {
 
-            Destroy(gameObject);
-        }
-        PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("ApplyDamage", RpcTarget.All);
-    }
-    void Die()
+public void ApplyDamage()
     {
-        Destroy(gameObject);
+        pv.RPC("Die", RpcTarget.All);
+        Debug.Log("Taking damage");
+        Die();
+    
+    }
+    [PunRPC]
+    public void Die()
+    {
+        Debug.Log("Dead");
+        gameObject.SetActive(false);
     }
 }
