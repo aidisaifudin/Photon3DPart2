@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!54 &1960065910030233516
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6325063435935091230}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7460126116275359361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2513,7 @@ GameObject:
   - component: {fileID: 1007120570583497556}
   - component: {fileID: 8692959312049541019}
   - component: {fileID: 3387200988172406238}
+  - component: {fileID: 1986548507372766651}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -2624,6 +2641,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2462432, y: 2.513055, z: 1.1482897}
   m_Center: {x: 0.10425961, y: 1.2497567, z: -0.07414484}
+--- !u!54 &1986548507372766651
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460126116275359607}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7460126116275359609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,13 +2838,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53594bf94ae5c6f4faf8197db0581afd, type: 3}
---- !u!1 &6325063435935091230 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3570123050472268303, guid: 53594bf94ae5c6f4faf8197db0581afd, type: 3}
-  m_PrefabInstance: {fileID: 7371473747039774737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &135394255236065325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7470829712727932988, guid: 53594bf94ae5c6f4faf8197db0581afd, type: 3}
+  m_PrefabInstance: {fileID: 7371473747039774737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6325063435935091230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3570123050472268303, guid: 53594bf94ae5c6f4faf8197db0581afd, type: 3}
   m_PrefabInstance: {fileID: 7371473747039774737}
   m_PrefabAsset: {fileID: 0}

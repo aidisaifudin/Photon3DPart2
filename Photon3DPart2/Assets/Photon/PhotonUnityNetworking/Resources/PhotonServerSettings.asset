@@ -64,6 +64,7 @@ MonoBehaviour:
   - PickUp
   - DestroyItem
   - Shoot
+  - RPC_ChangeScene
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
