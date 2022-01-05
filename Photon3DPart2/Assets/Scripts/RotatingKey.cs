@@ -10,13 +10,13 @@ public class RotatingKey : MonoBehaviourPun
     private bool pickUpAllowed;
     private DoorTrigger door;
     public PhotonView pV;
-    public GameObject doorFrame;
+    public GameObject trigger;
     public GameObject instructionKeyPanel;
     // Update is called once per frame
     public void Start()
     {
         pV = GetComponent<PhotonView>();
-        door = doorFrame.GetComponent<DoorTrigger>();
+        door = trigger.GetComponent<DoorTrigger>();
         instructionKeyPanel.SetActive(false);
 
     }
