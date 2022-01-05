@@ -34,8 +34,8 @@ public class DoorTrigger : MonoBehaviourPun
     {
         if(gotKey && Input.GetKeyDown(KeyCode.E))
         {
-            OpeningDoor();
-            doorAnim.Play("DoorOpen");
+            //OpeningDoor();
+           // doorAnim.Play("DoorOpen");
             pv.RPC("OpeningDoor", RpcTarget.All);
         }
     }
@@ -45,7 +45,7 @@ public class DoorTrigger : MonoBehaviourPun
     public void OpeningDoor()
     {
         instructionPanel.SetActive(true);
-        
+        doorAnim.Play("DoorOpen");
     }
 
 }
