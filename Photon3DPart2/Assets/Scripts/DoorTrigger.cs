@@ -7,47 +7,46 @@ using Photon.Realtime;
 
 public class DoorTrigger : MonoBehaviourPun
 {
-    public bool action;
-   
-    public GameObject door;
-    public GameObject openPanel;
-    public GameObject triggerCube;
+    public bool gotKey;
+    public GameObject instructionPanel;
+    public RotatingKey key;
+    public Animator doorAnim;
+    public PhotonView pv;
 
-    private void Start()
+    public void Start()
     {
-        door.GetComponent<Animator>();
-        openPanel.gameObject.SetActive(false);
+        gotKey = false;
+        instructionPanel.SetActive(false);
+        doorAnim.GetComponent<Animator>();
     }
-    
-    void OnTriggerEnter(Collider other)
+
+    public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        OpeningDoor();
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        instructionPanel.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if(gotKey && Input.GetKeyDown(KeyCode.E))
         {
-            openPanel.gameObject.SetActive(true);
-            action = true;
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (action == true)
-                {
-
-
-                    openPanel.gameObject.SetActive(false);
-                    door.GetComponent<Animator>().Play("DoorOpen");
-                    action = false;
-                    triggerCube.gameObject.SetActive(false);
-
-                }
-            }
+            OpeningDoor();
+            doorAnim.Play("DoorOpen");
+            pv.RPC("OpeningDoor", RpcTarget.All);
         }
     }
-    
-    void OnTriggerExit(Collider other)
+
+
+    [PunRPC]
+    public void OpeningDoor()
     {
-        openPanel.gameObject.SetActive(false);
-        action = false;
+        instructionPanel.SetActive(true);
+        
     }
-   
-    
+
 }
 

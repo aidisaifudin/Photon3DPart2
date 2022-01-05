@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun;
+using Photon.Realtime;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviourPun
 {
     public NavMeshAgent agent;
 

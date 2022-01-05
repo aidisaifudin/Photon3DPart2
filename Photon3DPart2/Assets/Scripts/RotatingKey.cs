@@ -8,18 +8,23 @@ public class RotatingKey : MonoBehaviourPun
 {
     public int rotatingSpeed;
     private bool pickUpAllowed;
-     public PhotonView pV;
-
+    private DoorTrigger door;
+    public PhotonView pV;
+    public GameObject doorFrame;
+    public GameObject instructionKeyPanel;
     // Update is called once per frame
     public void Start()
     {
         pV = GetComponent<PhotonView>();
+        door = doorFrame.GetComponent<DoorTrigger>();
+        instructionKeyPanel.SetActive(false);
+
     }
     void Update()
     {
-        //transform.Rotate(0, rotatingSpeed, 0, Space.World);
+        transform.Rotate(0, rotatingSpeed, 0, Space.World);
        
-            if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
+            if (pickUpAllowed && Input.GetKeyDown(KeyCode.F))
             {
             PickUp();
             pV.RPC("PickUp", RpcTarget.All);
@@ -28,9 +33,11 @@ public class RotatingKey : MonoBehaviourPun
     }
     public void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == ("Player"))
         {
             pickUpAllowed = true;
+            instructionKeyPanel.SetActive(true);
             Debug.Log("Key Here");
         }
     }
@@ -39,19 +46,18 @@ public class RotatingKey : MonoBehaviourPun
         if (other.gameObject.tag == ("Player"))
         {
             pickUpAllowed = false;
+           
         }
     }
     
     [PunRPC]
     public void PickUp()
     {
+        door.gotKey = true;
         gameObject.SetActive(false);
-   
+        instructionKeyPanel.SetActive(false);
+
         Debug.Log("Key Gone");
     }
-    public void UpdatedPickUp()
-    {
-       // PhotonView photonView = PhotonView.Get(this);
-       // pV.RPC("PickUp", RpcTarget.AllBuffered, null);
-    }
+   
 }
