@@ -30,6 +30,6 @@ public class winPanel : MonoBehaviourPun
     public void RPC_ChangeScene()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.LoadLevel("Defeat");
+        PhotonNetwork.LoadLevel("Victory");
     }
 }

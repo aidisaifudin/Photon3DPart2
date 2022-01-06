@@ -72,6 +72,7 @@ MonoBehaviour:
   - LoseTime
   - StartGame
   - RPC_DefeatScene
+  - VictoryScene
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
