@@ -13,8 +13,8 @@ public class EnemyTarget : MonoBehaviourPun
     public float damage = 25f;
     public PhotonView pv;
     public static int deathCount = 10;
+  
 
-    
 
 
     // Start is called before the first frame update
@@ -26,9 +26,8 @@ public class EnemyTarget : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        
+        deathCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
     }
-
 
 
     private void OnTriggerEnter(Collider other)
@@ -44,9 +43,9 @@ public class EnemyTarget : MonoBehaviourPun
 
         }
     }
-   
 
-public void ApplyDamage()
+ 
+    public void ApplyDamage()
     {
         pv.RPC("Die", RpcTarget.All);
         Debug.Log("Taking damage");
@@ -58,7 +57,7 @@ public void ApplyDamage()
     {
        
         Debug.Log("Dead");
-        deathCount -= 1;
+        //deathCount -= 1;
         gameObject.SetActive(false);
         
 
