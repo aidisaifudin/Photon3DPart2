@@ -22,6 +22,12 @@ public class DoorTrigger : MonoBehaviourPun
 
     public void OnTriggerEnter(Collider other)
     {
+        if (gotKey && Input.GetKeyDown(KeyCode.E))
+        {
+            //OpeningDoor();
+            // doorAnim.Play("DoorOpen");
+            pv.RPC("OpeningDoor", RpcTarget.All);
+        }
         //OpeningDoor();
     }
 
