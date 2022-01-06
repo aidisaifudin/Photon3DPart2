@@ -22,16 +22,7 @@ public class DoorTrigger : MonoBehaviourPun
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            if (gotKey && Input.GetKeyDown(KeyCode.E))
-            {
-                //OpeningDoor();
-                // doorAnim.Play("DoorOpen");
-                pv.RPC("OpeningDoor", RpcTarget.All);
-            }
-        }
-        //OpeningDoor();
+        OpeningDoor();
     }
 
     public void OnTriggerExit(Collider other)
@@ -41,7 +32,12 @@ public class DoorTrigger : MonoBehaviourPun
 
     public void Update()
     {
-      
+        if(gotKey && Input.GetKeyDown(KeyCode.E))
+        {
+            //OpeningDoor();
+           // doorAnim.Play("DoorOpen");
+            pv.RPC("OpeningDoor", RpcTarget.All);
+        }
     }
 
 
