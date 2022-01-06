@@ -13,6 +13,7 @@ TagManager:
   - EnemyBullet
   - E
   - Floor
+  - Start
   layers:
   - Default
   - TransparentFX
