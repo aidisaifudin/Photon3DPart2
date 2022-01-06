@@ -21,9 +21,19 @@ public class DeathCount : MonoBehaviourPun
     }
 
     // Update is called once per frame
+    
     void Update()
     {
+        pv.RPC("UpdateddeathCounter", RpcTarget.All);
 
+    }
+    public void OnPhotonSerializeView()
+    {
+
+    }
+    [PunRPC]
+    public void UpdateddeathCounter()
+    {
         deathCounter = EnemyTarget.deathCount;
         ScoreText.text = deathCounter.ToString();
     }
