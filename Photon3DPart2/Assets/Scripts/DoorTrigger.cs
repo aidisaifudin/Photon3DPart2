@@ -33,22 +33,30 @@ public class DoorTrigger : MonoBehaviourPun
         instructionPanel.SetActive(false);
 
     }
-    [PunRPC]
-    public void OpeningDoor()
-    {
-        //instructionPanel.SetActive(true);
-        doorAnim.SetBool("gotKey", true);
-    }
-
+   
 
     public void Update()
     {
         if (gotKey == true && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("gotKey");
-            pv.RPC("OpeningDoor", RpcTarget.All); 
+            OpeningDoor();
         }
     }
 
+
+   
+    public void OpeningDoor()
+    {
+        //instructionPanel.SetActive(true);
+        //doorAnim.SetBool("gotKey", true);
+        pv.RPC("UpdatedDoorKey", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void UpdatedDoorKey()
+    {
+        doorAnim.SetBool("gotKey", true);
+    }
 }
 
