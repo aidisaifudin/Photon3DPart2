@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+
 public class EnemyTarget : MonoBehaviourPun
 {
     public float health = 100f;
@@ -11,8 +12,9 @@ public class EnemyTarget : MonoBehaviourPun
     private bool created = false;
     public float damage = 25f;
     public PhotonView pv;
-    public int deathCounter = 10;
-    public Text ScoreText;
+    public static int deathCount = 10;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class EnemyTarget : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = deathCounter.ToString();
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,6 +33,7 @@ public class EnemyTarget : MonoBehaviourPun
         if (collision.gameObject.tag == "Bullet")
         {
             ApplyDamage();
+            deathCount -= 1;
             Debug.Log("Hit");
            
 
@@ -52,6 +55,7 @@ public void ApplyDamage()
     {
         Debug.Log("Dead");
         gameObject.SetActive(false);
-        deathCounter--;
+        
+        
     }
 }
