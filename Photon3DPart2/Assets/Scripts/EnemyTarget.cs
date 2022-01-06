@@ -26,7 +26,16 @@ public class EnemyTarget : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        deathCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        
+        
+        if (GameObject.FindGameObjectsWithTag("Enemy")==null)
+        {
+            deathCount = 0;
+        }
+        else
+        {
+            deathCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        }
     }
 
 
