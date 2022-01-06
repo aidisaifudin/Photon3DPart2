@@ -22,10 +22,7 @@ public class DoorTrigger : MonoBehaviourPun
 
     public void OnTriggerEnter(Collider other)
     {
-        if (gotKey && Input.GetKeyDown(KeyCode.E))
-        {
-            OpeningDoor();
-        }
+        instructionPanel.SetActive(true);
     }
 
     public void OnTriggerExit(Collider other)
