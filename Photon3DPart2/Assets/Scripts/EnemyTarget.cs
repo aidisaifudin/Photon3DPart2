@@ -31,21 +31,12 @@ public class EnemyTarget : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        if (deathCount == 2)
-        {
-            
-            pv.RPC("RPC_ChangeScene", RpcTarget.All);
-        }
+        
         Debug.Log("DeathCount"+deathCount);
         
         
     }
-    [PunRPC]
-    public void RPC_ChangeScene()
-    {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.LoadLevel("Victory");
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {

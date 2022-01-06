@@ -25,12 +25,12 @@ public class DeathCount : MonoBehaviourPun
     
     void Update()
     {
-        
-        pv.RPC("UpdateddeathCounter", RpcTarget.All);
         if (deathCounter == 2)
         {
             winPanel.SetActive(true);
         }
+        pv.RPC("UpdateddeathCounter", RpcTarget.All);
+    
 
     }
     public void OnPhotonSerializeView()
