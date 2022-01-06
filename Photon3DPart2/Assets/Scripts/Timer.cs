@@ -36,6 +36,7 @@ public class Timer : MonoBehaviourPun
             if(timeLeft == 0)
             {
                 openPanel.SetActive(true);
+                Time.timeScale = 0;
             }
           
         }
