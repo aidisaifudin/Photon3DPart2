@@ -23,16 +23,17 @@ public class DoorTrigger : MonoBehaviourPun
     public void OnTriggerEnter(Collider other)
     {
         instructionPanel.SetActive(true);
+        if (gotKey==true)
+        {
+            Debug.Log("gotKey");
+            pv.RPC("OpeningDoor", RpcTarget.All);
+        }
     }
 
     public void OnTriggerExit(Collider other)
     {
         instructionPanel.SetActive(false);
-        if (gotKey)
-        {
-            Debug.Log("gotKey");
-            pv.RPC("OpeningDoor", RpcTarget.All);
-        }
+   
     }
 
     public void Update()
