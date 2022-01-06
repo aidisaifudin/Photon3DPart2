@@ -25,7 +25,7 @@ public class DeathCount : MonoBehaviourPun
     {
         DeathCounter();
 
-        Debug.Log(deathCounter);
+        Debug.Log("enemy left :"+deathCounter);
     }
     public void OnPhotonSerializeView()
     {
