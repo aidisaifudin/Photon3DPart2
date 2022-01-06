@@ -42,7 +42,7 @@ public class FireObject : MonoBehaviourPun
             Temporary_RigidBody = BulletHolder.GetComponent<Rigidbody>();
             Temporary_RigidBody.AddForce(transform.forward * Force);
 
-            Destroy(BulletHolder, 5.0f);
+            Destroy(BulletHolder, 1.0f);
         
     }
 }

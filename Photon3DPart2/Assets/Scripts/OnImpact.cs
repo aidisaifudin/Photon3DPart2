@@ -23,17 +23,21 @@ public class OnImpact : MonoBehaviourPun
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        ContactPoint contact = collision.contacts[0];
+        
         //Instantiate(impactEffect, contact.point, Quaternion.LookRotation(contact.normal));
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.tag == "E")
         {
-            
-           // EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
+            Destroy(this.gameObject);
+            // EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
             //target.ApplyDamage(damage);
         }
-        Destroy(gameObject);
+        else if (collision.tag == "Floor")
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 }

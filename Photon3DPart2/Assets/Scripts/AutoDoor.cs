@@ -31,7 +31,7 @@ void Start()
         OpeningDoor();
     }
 
-    public void nTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         ClosingDoor();
     }

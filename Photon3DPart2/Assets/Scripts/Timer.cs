@@ -9,7 +9,7 @@ public class Timer : MonoBehaviourPun
 {
     public int timeLeft;
     public Text countdownText;
-
+    public PhotonView pv;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +25,12 @@ public class Timer : MonoBehaviourPun
         if (timeLeft <= 0)
         {
             StopCoroutine("LoseTime");
+            pv.RPC("LoseTime", RpcTarget.All);
             countdownText.text = "Times Up!";
         }
     }
 
+    [PunRPC]
     IEnumerator LoseTime()
     {
         while (true)
