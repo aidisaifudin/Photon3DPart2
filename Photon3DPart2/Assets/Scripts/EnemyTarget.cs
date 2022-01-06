@@ -31,6 +31,8 @@ public class EnemyTarget : MonoBehaviourPun
         if (GameObject.FindGameObjectsWithTag("Enemy")==null)
         {
             deathCount = 0;
+            Debug.Log("Vic");
+            //VIctory
         }
         else
         {
