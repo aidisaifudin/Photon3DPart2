@@ -68,6 +68,7 @@ MonoBehaviour:
   - OpeningDoor
   - Die
   - UpdateddeathCounter
+  - ClosingDoor
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
