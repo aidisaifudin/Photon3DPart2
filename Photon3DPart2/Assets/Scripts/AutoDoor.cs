@@ -5,49 +5,58 @@ using Photon.Pun;
 using Photon.Realtime;
    
 
-public class AutoDoor : MonoBehaviourPun
+public class AutoDoor : MonoBehaviour
 {
     public Animator doorAnim;
     public PhotonView pv;
 
 // Start is called before the first frame update
-void Start()
+     public void Start()
     {
         doorAnim.GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if(gameObject.tag == "Player")
+    
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag=="Player")
         {
-            pv.RPC("OpeningDoor", RpcTarget.All);
-            pv.RPC("ClosingDoor", RpcTarget.All);
+            pv.RPC("OpeningDoor", RpcTarget.AllBuffered);
+        }
+        else
+        {
+            Debug.Log("Nothing");
         }
     }
-
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        OpeningDoor();
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        ClosingDoor();
+        if (other.tag == "Player")
+        {
+            
+            pv.RPC("ClosingDoor", RpcTarget.AllBuffered);
+        }
+        else
+        {
+            Debug.Log("Nothing");
+        }
     }
 
     [PunRPC]
     public void OpeningDoor()
     {
-        
-        doorAnim.Play("DoorOpen");
+
+        doorAnim.SetBool("open", true);
     }
 
     [PunRPC]
     public void ClosingDoor()
     {
 
-        doorAnim.Play("DoorClose");
+        doorAnim.SetBool("open", false);
     }
 
 }
