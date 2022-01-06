@@ -41,7 +41,7 @@ public class DeathCount : MonoBehaviourPun
     [PunRPC]
     public void UpdateddeathCounter()
     {
-        deathCounter = EnemyTarget.deathCount;
+        //deathCounter = EnemyTarget.deathCount;
         ScoreText.text = deathCounter.ToString();
     }
 }
