@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class Timer : MonoBehaviourPun
 {
-    public int timeLeft;
+    public float timeLeft;
     public Text countdownText;
     public PhotonView pv;
 
@@ -23,22 +23,21 @@ public class Timer : MonoBehaviourPun
     {
         countdownText.text = ("Time Left = " + timeLeft);
 
-       
-         if (timeLeft < 0)
-        {
-            StopCoroutine("LoseTime");
-            
-            countdownText.text = "Times Up!";
-        }
+        pv.RPC("LoseTime", RpcTarget.All);
+        
     }
 
     [PunRPC]
-    IEnumerator LoseTime()
+    public void LoseTime()
     {
-        while (true)
+        if (timeLeft > 0 )
         {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
+            timeLeft -= Time.deltaTime;
         }
+        else if (timeLeft < 0)
+        {
+            Debug.Log("Victory");
+        }
+       
     }
 }
