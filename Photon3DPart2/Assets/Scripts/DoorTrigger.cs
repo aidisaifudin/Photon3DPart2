@@ -45,7 +45,7 @@ public class DoorTrigger : MonoBehaviourPun
     public void OpeningDoor()
     {
         instructionPanel.SetActive(true);
-        doorAnim.Play("DoorOpen");
+        doorAnim.Play("KeyDoorOpen");
     }
 
 }
