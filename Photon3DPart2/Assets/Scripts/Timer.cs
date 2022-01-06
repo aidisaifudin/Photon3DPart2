@@ -15,7 +15,7 @@ public class Timer : MonoBehaviourPun
     void Start()
     {
        
-        pv.RPC("LoseTime", RpcTarget.All);
+       // pv.RPC("LoseTime", RpcTarget.All);
     }
 
     // Update is called once per frame
