@@ -28,16 +28,16 @@ public class DoorTrigger : MonoBehaviourPun
     public void OnTriggerExit(Collider other)
     {
         instructionPanel.SetActive(false);
+        if (gotKey )
+        {
+            
+            pv.RPC("OpeningDoor", RpcTarget.All);
+        }
     }
 
     public void Update()
     {
-        if(gotKey && Input.GetKeyDown(KeyCode.E))
-        {
-            //OpeningDoor();
-           // doorAnim.Play("DoorOpen");
-            pv.RPC("OpeningDoor", RpcTarget.All);
-        }
+      
     }
 
 
