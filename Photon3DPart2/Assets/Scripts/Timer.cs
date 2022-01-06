@@ -14,7 +14,8 @@ public class Timer : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+        pv.RPC("LoseTime", RpcTarget.All);
     }
 
     // Update is called once per frame
@@ -22,13 +23,8 @@ public class Timer : MonoBehaviourPun
     {
         countdownText.text = ("Time Left = " + timeLeft);
 
-        if (timeLeft > 0)
-        {
-            StartCoroutine("LoseTime");
-            pv.RPC("LoseTime", RpcTarget.All);
-            
-        }
-        else if (timeLeft == 0)
+       
+         if (timeLeft < 0)
         {
             StopCoroutine("LoseTime");
             
