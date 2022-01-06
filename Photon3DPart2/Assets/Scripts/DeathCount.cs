@@ -16,15 +16,14 @@ public class DeathCount : MonoBehaviourPun
     void Start()
     {
         pv = GetComponent<PhotonView>();
-        
-        
+    
     }
 
     // Update is called once per frame
     
     void Update()
     {
-        pv.RPC("UpdateddeathCounter", RpcTarget.All);
+        pv.RPC("UpdateddeathCounter", RpcTarget.AllBufferedViaServer);
 
     }
     public void OnPhotonSerializeView()

@@ -13,8 +13,9 @@ public class EnemyTarget : MonoBehaviourPun
     public float damage = 25f;
     public PhotonView pv;
     public static int deathCount = 10;
+
     
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +54,11 @@ public void ApplyDamage()
     [PunRPC]
     public void Die()
     {
+       
         Debug.Log("Dead");
         gameObject.SetActive(false);
         
-        
+
     }
+
 }
