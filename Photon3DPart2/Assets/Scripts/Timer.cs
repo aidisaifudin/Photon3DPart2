@@ -21,7 +21,7 @@ public class Timer : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        countdownText.text = ("Time Left = " + timeLeft);
+        
 
         pv.RPC("LoseTime", RpcTarget.All);
         
@@ -33,11 +33,12 @@ public class Timer : MonoBehaviourPun
         if (timeLeft > 0 )
         {
             timeLeft -= Time.deltaTime;
+
         }
         else if (timeLeft < 0)
         {
             Debug.Log("Victory");
         }
-       
+        countdownText.text = ("Time Left = " + timeLeft);
     }
 }
