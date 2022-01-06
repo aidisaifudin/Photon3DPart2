@@ -28,27 +28,29 @@ public class EnemyTarget : MonoBehaviourPun
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
-    {
 
-        if (collision.gameObject.tag == "Bullet")
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullet")
         {
             ApplyDamage();
-            
+
             Debug.Log("Hit");
-           
+
 
             //pv.RPC("Die", RpcTarget.All);
 
         }
-      
     }
+   
 
 public void ApplyDamage()
     {
         pv.RPC("Die", RpcTarget.All);
         Debug.Log("Taking damage");
-        Die();
+        //Die();
     
     }
     [PunRPC]
