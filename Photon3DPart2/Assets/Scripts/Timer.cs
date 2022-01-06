@@ -28,7 +28,7 @@ public class Timer : MonoBehaviourPun
             pv.RPC("LoseTime", RpcTarget.All);
             
         }
-        if (timeLeft == 0)
+        else if (timeLeft == 0)
         {
             StopCoroutine("LoseTime");
             
