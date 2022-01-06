@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class Timer : MonoBehaviourPun
 {
-    public int timeLeft = 10;
+    public int timeLeft;
     public Text countdownText;
 
 
