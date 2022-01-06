@@ -8,9 +8,9 @@ using Photon.Realtime;
 
 public class EnemyRunAway : MonoBehaviourPun
 {
-    private NavMeshAgent _agent;
+    public NavMeshAgent _agent;
     public GameObject enemy;
-    public float enemyRunDist = 4.0f;
+    public float enemyRunDist;
 
     // Start is called before the first frame update
     void Start()
