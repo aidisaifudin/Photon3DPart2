@@ -11,6 +11,7 @@ public class StartGameScript : MonoBehaviourPun
     public void StartGame()
     {
         Timer.timer.start = true;
+        StartCoroutine(VictoryScene());
         Destroy(this.gameObject);
     }
 
@@ -20,7 +21,7 @@ public class StartGameScript : MonoBehaviourPun
         {
             pv.RPC("StartGame", RpcTarget.All);
            
-            StartCoroutine(VictoryScene());
+            
            
         }
     }
@@ -33,7 +34,7 @@ public class StartGameScript : MonoBehaviourPun
     IEnumerator VictoryScene()
     {
         
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         pv.RPC("RPC_DefeatScene", RpcTarget.All);
     }
 }

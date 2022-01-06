@@ -13,6 +13,7 @@ public class Timer : MonoBehaviourPun
     public Text countdownText;
     public bool start=false;
     public PhotonView pv;
+    public GameObject openPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +33,15 @@ public class Timer : MonoBehaviourPun
         {
             //Debug.Log("Defeat");
             timeLeft = 0;
+            if(timeLeft == 0)
+            {
+                openPanel.SetActive(true);
+            }
           
         }
 
         countdownText.text = timeLeft.ToString("Time Left = " + "0" );
     }
 
-
+    
 }

@@ -31,7 +31,7 @@ public class EnemyTarget : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        if (deathCount == 1)
+        if (deathCount == 2)
         {
             
             pv.RPC("RPC_ChangeScene", RpcTarget.All);
