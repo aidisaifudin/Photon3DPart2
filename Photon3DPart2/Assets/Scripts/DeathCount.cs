@@ -11,7 +11,7 @@ public class DeathCount : MonoBehaviourPun
     public float deathCounter;
     public Text ScoreText;
     public PhotonView pv;
-
+    public GameObject winPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,10 @@ public class DeathCount : MonoBehaviourPun
     {
         
         pv.RPC("UpdateddeathCounter", RpcTarget.All);
+        if (deathCounter == 2)
+        {
+            winPanel.SetActive(true);
+        }
 
     }
     public void OnPhotonSerializeView()
@@ -38,7 +42,7 @@ public class DeathCount : MonoBehaviourPun
     [PunRPC]
     public void UpdateddeathCounter()
     {
-        Debug.Log("minus 1");
+        
         deathCounter = EnemyTarget.deathCount;
         ScoreText.text = deathCounter.ToString();
     }
