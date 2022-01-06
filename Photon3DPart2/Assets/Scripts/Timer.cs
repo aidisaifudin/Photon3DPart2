@@ -32,6 +32,6 @@ public class Timer : MonoBehaviourPun
             Debug.Log("Victory");
         }
 
-        countdownText.text = ("Time Left = " + timeLeft);
+        countdownText.text = timeLeft.ToString("Time Left = " + "0" );
     }
 }
