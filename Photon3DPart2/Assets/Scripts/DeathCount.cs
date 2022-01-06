@@ -11,10 +11,12 @@ public class DeathCount : MonoBehaviourPun
     public int deathCounter;
     public Text ScoreText;
     public PhotonView pv;
+    public List<GameObject> enemies;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemies = new List<GameObject>();
         pv = GetComponent<PhotonView>();
     
     }
