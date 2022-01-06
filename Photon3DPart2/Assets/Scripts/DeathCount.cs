@@ -23,11 +23,19 @@ public class DeathCount : MonoBehaviourPun
     
     void Update()
     {
-        pv.RPC("UpdateddeathCounter", RpcTarget.AllBufferedViaServer);
+        DeathCounter();
+        
 
     }
     public void OnPhotonSerializeView()
     {
+
+    }
+    public void DeathCounter()
+    {
+        deathCounter = EnemyTarget.deathCount;
+        ScoreText.text = deathCounter.ToString();
+        pv.RPC("UpdateddeathCounter", RpcTarget.AllBufferedViaServer);
 
     }
     [PunRPC]
