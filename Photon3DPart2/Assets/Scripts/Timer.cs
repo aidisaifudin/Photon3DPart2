@@ -10,11 +10,11 @@ public class Timer : MonoBehaviourPun
     public float timeLeft;
     public Text countdownText;
     public PhotonView pv;
-
+    public static Timer timer;
     // Start is called before the first frame update
     void Start()
     {
-       
+        timer = this;
        // pv.RPC("LoseTime", RpcTarget.All);
     }
 
@@ -23,7 +23,7 @@ public class Timer : MonoBehaviourPun
     {
         
 
-        pv.RPC("LoseTime", RpcTarget.All);
+       // pv.RPC("LoseTime", RpcTarget.All);
         
     }
 

@@ -7,13 +7,14 @@ using Photon.Realtime;
 public class OnImpact : MonoBehaviourPun
 {
     public PhotonView pv;
+    public Timer timer;
    // public GameObject impactEffect;
 
     public float damage = 25f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer.GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -34,9 +35,9 @@ public class OnImpact : MonoBehaviourPun
             // EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
             //target.ApplyDamage(damage);
         }
-        else if (collision.tag == "Floor")
+        else if (collision.tag == "Start")
         {
-            Destroy(this.gameObject);
+            timer.LoseTime();
         }
         
     }
