@@ -39,7 +39,7 @@ public class DoorTrigger : MonoBehaviourPun
         if (gotKey == true && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("gotKey");
-            OpeningDoor();
+            pv.RPC("OpeningDoor", RpcTarget.All); 
         }
     }
 
