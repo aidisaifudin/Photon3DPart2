@@ -27484,7 +27484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: or you will lose !
+  m_text: if 5 mins is up game over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a79484353beb6bc4faf53c8f8773b1a1, type: 2}
   m_sharedMaterial: {fileID: 8604737057839349913, guid: a79484353beb6bc4faf53c8f8773b1a1, type: 2}
@@ -31051,7 +31051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Kill amount of robots given within the time frame '
+  m_text: or find the key to escape
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a79484353beb6bc4faf53c8f8773b1a1, type: 2}
   m_sharedMaterial: {fileID: 8604737057839349913, guid: a79484353beb6bc4faf53c8f8773b1a1, type: 2}
@@ -39043,7 +39043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find a key to enter the safe room
+  m_text: kill 20 enemies to escape
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a79484353beb6bc4faf53c8f8773b1a1, type: 2}
   m_sharedMaterial: {fileID: 8604737057839349913, guid: a79484353beb6bc4faf53c8f8773b1a1, type: 2}

@@ -25,7 +25,7 @@ public class DeathCount : MonoBehaviourPun
     
     void Update()
     {
-        if (deathCounter == 2)
+        if (deathCounter == 20)
         {
             winPanel.SetActive(true);
         }
