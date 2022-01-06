@@ -1017,6 +1017,7 @@ GameObject:
   - component: {fileID: 3370270035272611849}
   - component: {fileID: 5097509723547504312}
   - component: {fileID: 3437589109142416881}
+  - component: {fileID: 8073098421335896787}
   m_Layer: 0
   m_Name: E
   m_TagString: Enemy
@@ -1131,6 +1132,7 @@ MonoBehaviour:
   health: 100
   deadbody: {fileID: 5968264321131442885}
   damage: 25
+  pv: {fileID: 5097509723547504312}
 --- !u!65 &1897696253949915244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1142,8 +1144,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2462432, y: 2.3043947, z: 1.7948475}
-  m_Center: {x: 0.10425961, y: 0.9571035, z: -0.39742374}
+  m_Size: {x: 1.2462432, y: 0, z: 2.1180286}
+  m_Center: {x: 0.10425961, y: -0.19509387, z: -0.23583317}
 --- !u!54 &3370270035272611849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1199,6 +1201,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!65 &8073098421335896787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5968264321131442885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.277039, y: 2.7350562, z: 1}
+  m_Center: {x: -0.08813405, y: 0.8675281, z: 0}
 --- !u!1 &5968264321131442887
 GameObject:
   m_ObjectHideFlags: 0
