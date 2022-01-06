@@ -24,8 +24,8 @@ public class DeathCount : MonoBehaviourPun
     void Update()
     {
         DeathCounter();
-        
 
+        Debug.Log(deathCounter);
     }
     public void OnPhotonSerializeView()
     {
@@ -33,6 +33,7 @@ public class DeathCount : MonoBehaviourPun
     }
     public void DeathCounter()
     {
+        
         deathCounter = EnemyTarget.deathCount;
         ScoreText.text = deathCounter.ToString();
         pv.RPC("UpdateddeathCounter", RpcTarget.AllBufferedViaServer);
