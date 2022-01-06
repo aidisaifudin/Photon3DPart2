@@ -23,11 +23,9 @@ public class DoorTrigger : MonoBehaviourPun
     public void OnTriggerEnter(Collider other)
     {
         instructionPanel.SetActive(true);
-        if (gotKey==true)
-        {
-            Debug.Log("gotKey");
-            pv.RPC("OpeningDoor", RpcTarget.All);
-        }
+        
+      
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -38,15 +36,18 @@ public class DoorTrigger : MonoBehaviourPun
 
     public void Update()
     {
-      
+        if (gotKey == true && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("gotKey");
+            OpeningDoor();
+        }
     }
-
 
     [PunRPC]
     public void OpeningDoor()
     {
         instructionPanel.SetActive(true);
-        doorAnim.SetBool("gotKey", false);
+        doorAnim.SetBool("gotKey", true);
     }
 
 }
