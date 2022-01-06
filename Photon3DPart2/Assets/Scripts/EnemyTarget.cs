@@ -34,7 +34,7 @@ public class EnemyTarget : MonoBehaviourPun
         if (collision.gameObject.tag == "Bullet")
         {
             ApplyDamage();
-            deathCount -= 1;
+            
             Debug.Log("Hit");
            
 
@@ -56,6 +56,7 @@ public void ApplyDamage()
     {
        
         Debug.Log("Dead");
+        deathCount -= 1;
         gameObject.SetActive(false);
         
 
