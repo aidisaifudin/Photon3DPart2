@@ -22,7 +22,7 @@ public class DoorTrigger : MonoBehaviourPun
 
     public void OnTriggerEnter(Collider other)
     {
-        OpeningDoor();
+        //OpeningDoor();
     }
 
     public void OnTriggerExit(Collider other)

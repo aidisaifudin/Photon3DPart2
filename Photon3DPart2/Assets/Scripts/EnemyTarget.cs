@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class EnemyTarget : MonoBehaviourPun
@@ -30,12 +31,21 @@ public class EnemyTarget : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        
-        
+        if (deathCount == 1)
+        {
+            
+            pv.RPC("RPC_ChangeScene", RpcTarget.All);
+        }
+        Debug.Log("DeathCount"+deathCount);
         
         
     }
-
+    [PunRPC]
+    public void RPC_ChangeScene()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel("Victory");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -69,5 +79,6 @@ public class EnemyTarget : MonoBehaviourPun
         
 
     }
+    
 
 }

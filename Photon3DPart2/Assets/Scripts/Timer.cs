@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviourPun
 {
@@ -27,20 +28,15 @@ public class Timer : MonoBehaviourPun
             timeLeft -= Time.deltaTime;
 
         }
-        else if (timeLeft < 0)
+        if (timeLeft <= 0)
         {
+            //Debug.Log("Defeat");
             timeLeft = 0;
-            pv.RPC("RPC_DefeatScene", RpcTarget.All);
-            Debug.Log("Defeat");
+          
         }
 
         countdownText.text = timeLeft.ToString("Time Left = " + "0" );
     }
 
-    [PunRPC]
-    public void RPC_DefeatScene()
-    {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.LoadLevel("Defeat");
-    }
+
 }

@@ -19,6 +19,21 @@ public class StartGameScript : MonoBehaviourPun
         if(other.tag=="Bullet")
         {
             pv.RPC("StartGame", RpcTarget.All);
+           
+            StartCoroutine(VictoryScene());
+           
         }
+    }
+    [PunRPC]
+    public void RPC_DefeatScene()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.LoadLevel("Defeat");
+    }
+    IEnumerator VictoryScene()
+    {
+        
+        yield return new WaitForSeconds(10f);
+        pv.RPC("RPC_DefeatScene", RpcTarget.All);
     }
 }
