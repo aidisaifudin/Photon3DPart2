@@ -18,10 +18,10 @@ public class OnImpact : MonoBehaviourPun
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         
-    }
+    //}
 
 
     private void OnTriggerEnter(Collider collision)
@@ -35,10 +35,7 @@ public class OnImpact : MonoBehaviourPun
             // EnemyTarget target = collision.transform.gameObject.GetComponent<EnemyTarget>();
             //target.ApplyDamage(damage);
         }
-        else if (collision.tag == "Start")
-        {
-            timer.LoseTime();
-        }
+
         
     }
 }
