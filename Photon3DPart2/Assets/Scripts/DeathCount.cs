@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class DeathCount : MonoBehaviour
+public class DeathCount : MonoBehaviourPun
 {
     private static int deathCounter;
     public Text ScoreText;
