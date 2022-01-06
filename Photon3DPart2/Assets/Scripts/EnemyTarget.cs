@@ -12,7 +12,9 @@ public class EnemyTarget : MonoBehaviourPun
     private bool created = false;
     public float damage = 25f;
     public PhotonView pv;
-    public static int deathCount = 10;
+    public static float deathCount;
+    public List<GameObject> enemies = new List<GameObject>();
+    public GameObject[] enemiesCount;
   
 
 
@@ -20,6 +22,7 @@ public class EnemyTarget : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+  
         
     }
 
@@ -28,16 +31,8 @@ public class EnemyTarget : MonoBehaviourPun
     {
         
         
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length<1)
-        {
-            deathCount = 0;
-            Debug.Log("Vic");
-            //VIctory
-        }
-        else
-        {
-            deathCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        }
+        
+        
     }
 
 
@@ -68,8 +63,8 @@ public class EnemyTarget : MonoBehaviourPun
     {
        
         Debug.Log("Dead");
-        //deathCount -= 1;
-        gameObject.SetActive(false);
+        deathCount += 1;
+        Destroy(this.gameObject);
         
 
     }

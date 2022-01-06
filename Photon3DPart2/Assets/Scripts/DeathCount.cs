@@ -8,7 +8,7 @@ using Photon.Realtime;
 
 public class DeathCount : MonoBehaviourPun
 {
-    public int deathCounter;
+    public float deathCounter;
     public Text ScoreText;
     public PhotonView pv;
 
@@ -27,7 +27,7 @@ public class DeathCount : MonoBehaviourPun
     {
         
         pv.RPC("UpdateddeathCounter", RpcTarget.All);
-        Debug.Log("enemy left :"+ deathCounter);
+
     }
     public void OnPhotonSerializeView()
     {
